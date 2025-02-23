@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Tablet QR Code</title>
+  </head>
+  <body>
+    <h1>Latest Tablet QR Code</h1>
+    {% if tablet %}
+    <img
+      src="{{ url_for('static', filename='tablet_images/' + tablet['batch_no'] + '.png') }}"
+      alt="QR Code"
+    />
+    <p><strong>Name:</strong> {{ tablet['name'] }}</p>
+    <p><strong>Batch No:</strong> {{ tablet['batch_no'] }}</p>
+    <p>
+      <strong>Manufacturing Date:</strong> {{ tablet['manufacturing_date'] }}
+    </p>
+    <p><strong>Expiry Date:</strong> {{ tablet['expiry_date'] }}</p>
+    <!--
+    <img
+      src="{{ url_for('static', filename='qr_codes/' + tablet['batch_no'] + '.png') }}"
+      alt="QR Code"
+    />
+  -->
+    <p>Scan the QR code to view details.</p>
+    {% else %}
+    <p>
+      No data available. Add a tablet from the <a href="/admin">Admin Panel</a>.
+    </p>
+    {% endif %}
+  </body>
+</html>

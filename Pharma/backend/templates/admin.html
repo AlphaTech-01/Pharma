@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Admin - Add Tablet</title>
+    <style>
+      body {
+        font-family: Arial, sans-serif;
+        margin: 20px;
+        padding: 20px;
+      }
+      form {
+        max-width: 400px;
+        padding: 20px;
+        border: 1px solid #ddd;
+        border-radius: 5px;
+      }
+      label {
+        font-weight: bold;
+        display: block;
+        margin-top: 10px;
+      }
+      input,
+      textarea {
+        width: 100%;
+        padding: 8px;
+        margin-top: 5px;
+      }
+      button {
+        margin-top: 10px;
+        padding: 10px;
+        background: blue;
+        color: white;
+        border: none;
+        cursor: pointer;
+      }
+    </style>
+  </head>
+  <body>
+    <h2>Admin Panel - Add Tablet Data</h2>
+
+    <form action="/admin" method="POST" enctype="multipart/form-data">
+      <label>Tablet Name:</label>
+      <input type="text" name="name" required />
+
+      <label>Batch No:</label>
+      <input type="text" name="batch_no" required />
+
+      <label>Manufacturing Date:</label>
+      <input type="date" name="manufacturing_date" required />
+
+      <label>Shelf Life (Days):</label>
+      <input type="number" name="shelf_life_days" required />
+
+      <label>Description:</label>
+      <textarea name="description" required></textarea>
+
+      <label>Tablet Image:</label>
+      <input type="file" name="image" accept="image/*" required />
+
+      <button type="submit">Submit</button>
+    </form>
+  </body>
+</html>

@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Tablet Information</title>
+  </head>
+  <body>
+    <h1>{{ tablet['name'] }}</h1>
+    <img
+      src="{{ url_for('static', filename='tablet_images/' + tablet['image']) }}"
+      alt="Tablet Image"
+      width="200"
+    />
+    <p><strong>Batch No:</strong> {{ tablet['batch_no'] }}</p>
+    <p>
+      <strong>Manufacturing Date:</strong> {{ tablet['manufacturing_date'] }}
+    </p>
+    <p><strong>Expiry Date:</strong> {{ tablet['expiry_date'] }}</p>
+    <p><strong>Description:</strong> {{ tablet['description'] }}</p>
+  </body>
+</html>

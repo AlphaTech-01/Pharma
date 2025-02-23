@@ -1,0 +1,6 @@
+@echo off
+echo Initializing Database...
+python backend/database.py
+echo Starting Flask Server...
+python backend/app.py
+pause
